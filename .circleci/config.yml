@@ -16,7 +16,6 @@ jobs:
       - run: 
           command: |
             docker-compose build
-            docker-compose up
             pipenv install  
             pipenv run python manage.py test
         # name: install dependencies
