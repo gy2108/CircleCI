@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7
+      #   environment:
+      #       PIPENV_VENV_IN_PROJECT: true
+      #       DATABASE_URL: db
+      # - image: circleci/postgres:9.6-alpine
+      #   environment:
+      #       POSTGRES_USER: postgres
+      #       POSTGRES_DB: postgres
+    steps:
+      - checkout
+      - run: 
+          command: |
+            pipenv run python manage.py test
+        # name: install dependencies
+        #   command: ls -al
+            # echo '^^^That should look familiar^^^'
+            # python3 -m venv venv
+            # . venv/bin/activate
+            # pip install -r requirements.txt
+      # - store_artifacts:
+      #     path: test-reports/
+      #     destination: python_app
