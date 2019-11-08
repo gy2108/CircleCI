@@ -13,8 +13,7 @@ jobs:
     steps:
       - checkout
       - run: 
-          command: |
-            pipenv install --skip-lock django djangorestframework psycopg2
+          command: |  
             pipenv run python manage.py test
         # name: install dependencies
         #   command: ls -al
