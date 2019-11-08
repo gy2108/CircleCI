@@ -12,6 +12,7 @@ jobs:
       #       POSTGRES_DB: postgres
     steps:
       - checkout
+      - setup_remote_docker
       - run: 
           command: |
             docker-compose build
